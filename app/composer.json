@@ -12,7 +12,6 @@
   "require": {
     "ext-mbstring": "*",
     "ext-pdo": "*",
-    "stichoza/google-translate-php": "^5.2",
     "ext-soap": "*"
   },
   "autoload": {
