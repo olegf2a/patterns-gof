@@ -1,0 +1,26 @@
+{
+  "name": "vendor_name/app",
+  "description": "PHP 8.4 project in Docker",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "leo",
+      "email": "email@example.com"
+    }
+  ],
+  "require": {
+    "ext-mbstring": "*",
+    "ext-pdo": "*",
+    "stichoza/google-translate-php": "^5.2",
+    "ext-soap": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    }
+  },
+  "config": {
+    "optimize-autoloader": true
+  }
+}

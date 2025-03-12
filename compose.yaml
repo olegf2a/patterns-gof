@@ -1,0 +1,32 @@
+services:
+  app:
+    build:
+      context: ./docker/app
+    container_name: gof_php_app
+    restart: unless-stopped
+    working_dir: /var/www/html
+    volumes:
+      - ./app:/var/www/html
+      - ./docker/app/conf.d:/usr/local/etc/php/conf.d
+    env_file:
+      - .env
+    networks:
+      - gof_network
+
+  nginx:
+    image: nginx:latest
+    container_name: gof_nginx_server
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    volumes:
+      - ./app:/var/www/html
+      - ./docker/nginx/conf.d:/etc/nginx/conf.d
+    depends_on:
+      - app
+    networks:
+      - gof_network
+
+networks:
+  gof_network:
+    driver: bridge
