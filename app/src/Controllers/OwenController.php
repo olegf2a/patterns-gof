@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Controllers;
-use App\Factories\Dish\AbstractDish;
+
+use App\Factories\Cooker\CookerCreator;
+use App\Factories\Cooker\CookerInterface;
 
 class OwenController extends AbstractController
 {
@@ -11,15 +13,18 @@ class OwenController extends AbstractController
     {
         parent::index();
 
-        foreach (AbstractDish::MENU as $dish => $dishName) {
-            try {
-                $dish = AbstractDish::getDish($dish);
-                $type = $this->get['type'] ?? '';
-                $dish->cook($type);
-            } catch (\Exception $e) {
-                echo $e->getMessage();
-            }
+        foreach (CookerCreator::getAvailable() as $meal) {
+            /** @var $cooker CookerInterface */
+            $cooker = CookerCreator::getCooker($meal);
+            echo $cooker->prepareMeal() . PHP_EOL;
         }
+
+        try {
+            CookerCreator::getCooker('ololo');
+        } catch (\Exception $exception) {
+            echo sprintf("Success test: %s", $exception->getMessage()) . PHP_EOL;
+        }
+
         parent::footer();
     }
 }
