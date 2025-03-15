@@ -2,9 +2,6 @@
 
 namespace App\Controllers;
 
-use App\Factories\Cooker\CookerCreator;
-use App\Factories\Cooker\CookerInterface;
-use App\Factories\Prototype\Car;
 use App\Factories\Prototype\CarDealer;
 use App\Views\DealerView;
 
