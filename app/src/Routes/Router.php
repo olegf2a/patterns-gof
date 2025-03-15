@@ -4,12 +4,14 @@ namespace App\Routes;
 
 use App\Controllers\HomeController;
 use App\Controllers\OwenController;
+use App\Controllers\InternationalCafeController;
 
 class Router
 {
     public const array ROUTES = [
         'home' => HomeController::class,
         'owen' => OwenController::class,
+        'international-cafe' => InternationalCafeController::class,
     ];
 
     public static function getController(string $url = 'home')
