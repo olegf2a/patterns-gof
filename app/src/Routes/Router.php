@@ -2,6 +2,7 @@
 
 namespace App\Routes;
 
+use App\Controllers\CarDealerController;
 use App\Controllers\HomeController;
 use App\Controllers\OwenController;
 use App\Controllers\InternationalCafeController;
@@ -12,6 +13,7 @@ class Router
         'home' => HomeController::class,
         'owen' => OwenController::class,
         'international-cafe' => InternationalCafeController::class,
+        'car-dealer' => CarDealerController::class,
     ];
 
     public static function getController(string $url = 'home')
