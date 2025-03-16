@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Factories\Cooker;
+namespace App\Patterns\Factories\Cooker;
 
 class ChickenCooker implements CookerInterface
 {

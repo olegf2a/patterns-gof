@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Factories\Prototype;
+namespace App\Patterns\Factories\Prototype;
 
 interface CarPrototypeInterface
 {

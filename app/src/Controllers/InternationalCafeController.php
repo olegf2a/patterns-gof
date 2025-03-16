@@ -2,13 +2,11 @@
 
 namespace App\Controllers;
 
-use App\Factories\AbstractFactory\Factory\JapanKitchenFactory;
-use App\Factories\AbstractFactory\Factory\KitchenFactoryInterface;
-use App\Factories\AbstractFactory\Factory\UkrainianKitchenFactory;
-use App\Factories\AbstractFactory\Factory\UsaKitchenFactory;
-use App\Factories\AbstractFactory\Kitchen\KitchenInterface;
-use App\Factories\Cooker\CookerCreator;
-use App\Factories\Cooker\CookerInterface;
+use App\Patterns\Factories\AbstractFactory\Factory\JapanKitchenFactory;
+use App\Patterns\Factories\AbstractFactory\Factory\KitchenFactoryInterface;
+use App\Patterns\Factories\AbstractFactory\Factory\UkrainianKitchenFactory;
+use App\Patterns\Factories\AbstractFactory\Factory\UsaKitchenFactory;
+use App\Patterns\Factories\AbstractFactory\Kitchen\KitchenInterface;
 
 class InternationalCafeController extends AbstractController
 {
