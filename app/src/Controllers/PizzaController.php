@@ -2,10 +2,10 @@
 
 namespace App\Controllers;
 
-use App\Factories\Builder\Director;
-use App\Factories\Builder\Exceptions\InvalidIngredientException;
-use App\Factories\Builder\PizzaBuilder;
-use App\Factories\Builder\PizzaInterface;
+use App\Patterns\Factories\Builder\Director;
+use App\Patterns\Factories\Builder\Exceptions\InvalidIngredientException;
+use App\Patterns\Factories\Builder\PizzaBuilder;
+use App\Patterns\Factories\Builder\PizzaInterface;
 use App\Views\PizzaView;
 
 

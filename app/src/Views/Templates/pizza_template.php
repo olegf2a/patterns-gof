@@ -1,6 +1,6 @@
 <?php
 /** @var \App\Views\PizzaView $this */
-/** @var \App\Factories\Builder\PizzaInterface $pizza */
+/** @var \App\Patterns\Factories\Builder\PizzaInterface $pizza */
 ?>
 <h2>Pizza Order</h2>
 

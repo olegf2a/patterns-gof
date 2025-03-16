@@ -2,7 +2,7 @@
 
 namespace App\Views;
 
-use App\Factories\Builder\PizzaInterface;
+use App\Patterns\Factories\Builder\PizzaInterface;
 
 class PizzaView
 {

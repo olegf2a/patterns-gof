@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Factories\Builder;
+namespace App\Patterns\Factories\Builder;
 
 
 class Director

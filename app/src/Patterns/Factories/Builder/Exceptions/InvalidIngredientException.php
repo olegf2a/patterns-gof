@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Factories\Builder\Exceptions;
+namespace App\Patterns\Factories\Builder\Exceptions;
 
 class InvalidIngredientException extends \Exception
 {

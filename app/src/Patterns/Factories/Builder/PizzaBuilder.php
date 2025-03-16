@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Factories\Builder;
+namespace App\Patterns\Factories\Builder;
 
 
-use App\Factories\Builder\Exceptions\InvalidIngredientException;
+use App\Patterns\Factories\Builder\Exceptions\InvalidIngredientException;
 
 class PizzaBuilder
 {
