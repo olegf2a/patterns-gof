@@ -2,6 +2,8 @@
 
 namespace App\Factories\Builder;
 
+use App\Factories\Builder\Exceptions\InvalidIngredientException;
+
 class Pizza implements PizzaInterface
 {
     /**
@@ -39,20 +41,18 @@ class Pizza implements PizzaInterface
         return $this;
     }
 
-    public function cook()
+    public function validateState()
     {
         if (empty($this->ingredients)) {
             throw new InvalidIngredientException("No ingredient supplied.");
         }
-        $layers = ["dough"] + $this->ingredients;
-        $this->reset();
-        return implode("+", $layers);
-
     }
 
-    public function reset()
+    public function represent(): string
     {
-        $this->ingredients = [];
+
+        $layers = ["dough"] + $this->ingredients;
+        return implode("+", $layers);
     }
 }
 

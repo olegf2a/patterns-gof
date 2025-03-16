@@ -29,7 +29,7 @@
 <?php if ($this->pizza): ?>
 <div>
     <h3>Ordered pizza:</h3>
-    <?= $this->pizza; ?>
+    <?= $this->pizza->represent(); ?>
 </div>
 <?php endif;?>
 

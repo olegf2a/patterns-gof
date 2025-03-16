@@ -8,13 +8,13 @@ class PizzaView
 {
     public function __construct(
         private array $ingredients,
-        private ?string $pizza = null,
+        private ?PizzaInterface $pizza = null,
         private ?string $error = null
     ) {
     }
 
     public function render(): void
     {
-        include __DIR__ . '/Templates/PizzaTemplate.php';
+        include __DIR__ . '/Templates/pizza_template.php';
     }
 }

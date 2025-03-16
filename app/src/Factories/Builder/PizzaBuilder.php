@@ -3,10 +3,19 @@
 namespace App\Factories\Builder;
 
 
+use App\Factories\Builder\Exceptions\InvalidIngredientException;
+
 class PizzaBuilder
 {
-    private $ingredients = [];
-    private $pizza = null;
+    private array $ingredients = [];
+
+    private PizzaInterface|null $pizza = null;
+
+    public function reset()
+    {
+        $this->pizza = null;
+        $this->ingredients = [];
+    }
 
     public function setIngredients(array $ingredients)
     {
@@ -14,7 +23,7 @@ class PizzaBuilder
         return $this;
     }
 
-    public function preparePizza(): PizzaInterface
+    public function cookPizza(): PizzaInterface
     {
         if (!$this->pizza) {
             $this->createPizza();
@@ -28,6 +37,7 @@ class PizzaBuilder
                 $this->addIngredient($ingredient);
             }
         }
+        $this->pizza->validateState();
         return $this->pizza;
     }
 
@@ -61,7 +71,7 @@ class PizzaBuilder
         }
     }
 
-    public function createPizza(): void
+    private function createPizza(): void
     {
         $this->pizza = new Pizza();
     }

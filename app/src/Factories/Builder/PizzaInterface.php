@@ -28,7 +28,7 @@ interface PizzaInterface
 
     public function addSeaFood();
 
-    public function cook();
+    public function validateState();
 
-    public function reset();
+    public function represent();
 }
