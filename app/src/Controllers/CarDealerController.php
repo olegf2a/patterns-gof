@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Factories\Prototype\CarDealer;
+use App\Factories\Prototype\Car;
 use App\Views\DealerView;
 
 class CarDealerController extends AbstractController
@@ -13,21 +13,14 @@ class CarDealerController extends AbstractController
     {
         parent::index();
 
-        $dealer = new CarDealer();
-        $colors = ['green, blue, pink'];
-        $cars = [];
+        Car::initTypes();
 
-        foreach ($colors as $color) {
-            $cars[] = $dealer->createPassenger($color, sprintf("%s-%s", rand(11, 99), rand(111, 999)));
-        }
-        foreach ($colors as $color) {
-            $cars[] = $dealer->createSuv($color, sprintf("%s-%s", rand(11, 99), rand(111, 999)));
-        }
-        foreach ($colors as $color) {
-            $cars[] = $dealer->createCargo($color, sprintf("%s-%s", rand(11, 99), rand(111, 999)));
-        }
+        $suv = Car::getSuv("red", sprintf("%s-%s", rand(11, 99), rand(111, 999)));
+        $passenger = Car::getPassenger("blue", sprintf("%s-%s", rand(11, 99), rand(111, 999)));
+        $cargo = Car::getCargo("white", sprintf("%s-%s", rand(11, 99), rand(111, 999)));
 
-        $view = new DealerView($cars);
+
+        $view = new DealerView([$suv, $passenger, $cargo]);
         $view->render();
 
         parent::footer();
