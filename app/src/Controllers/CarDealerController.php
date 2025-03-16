@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Factories\Prototype\Car;
+use App\Patterns\Factories\Prototype\Car;
 use App\Views\DealerView;
 
 class CarDealerController extends AbstractController

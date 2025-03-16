@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Factories\AbstractFactory\Kitchen;
+namespace App\Patterns\Factories\AbstractFactory\Kitchen;
 
 class Usa implements KitchenInterface
 {
