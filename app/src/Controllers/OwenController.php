@@ -2,8 +2,8 @@
 
 namespace App\Controllers;
 
-use App\Factories\Cooker\CookerCreator;
-use App\Factories\Cooker\CookerInterface;
+use App\Patterns\Factories\Cooker\CookerCreator;
+use App\Patterns\Factories\Cooker\CookerInterface;
 
 class OwenController extends AbstractController
 {
