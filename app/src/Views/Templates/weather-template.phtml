@@ -1,0 +1,14 @@
+<?php
+/** @var \App\Views\WeatherView $this */
+?>
+
+<div>
+    <h3>Weekly weather:</h3>
+    <?php foreach ($this->getWeather()->weeklyWeather() as $dayTemp): ?>
+        <p><?= $dayTemp ?></p>
+    <?php endforeach; ?>
+</div>
+<div>
+    <h3>Tomorrow temperature:</h3>
+    <p><?= $this->getWeather()->tomorrowWeather() ?></p>
+</div>
