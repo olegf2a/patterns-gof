@@ -18,15 +18,7 @@ interface PizzaInterface
         self::INGREDIENT_SEAFOOD,
     ];
 
-    public function addCheese();
-
-    public function addBeacon();
-
-    public function addPineapple();
-
-    public function addMushroom();
-
-    public function addSeaFood();
+    public function addIngredient($ingredient);
 
     public function validateState();
 

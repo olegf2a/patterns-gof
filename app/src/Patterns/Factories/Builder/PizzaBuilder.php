@@ -51,24 +51,7 @@ class PizzaBuilder
     private function addIngredient($ingredient)
     {
         $this->validateIngredient($ingredient);
-        switch ($ingredient)
-        {
-            case PizzaInterface::INGREDIENT_BEACON:
-                $this->pizza->addBeacon();
-                return;
-            case PizzaInterface::INGREDIENT_CHEESE:
-                $this->pizza->addCheese();
-                return;
-            case PizzaInterface::INGREDIENT_MUSHROOM:
-                $this->pizza->addMushroom();
-                return;
-            case PizzaInterface::INGREDIENT_PINEAPPLE:
-                $this->pizza->addPineapple();
-                return;
-            case PizzaInterface::INGREDIENT_SEAFOOD:
-                $this->pizza->addSeaFood();
-                return;
-        }
+        $this->pizza->addIngredient($ingredient);
     }
 
     private function createPizza(): void

@@ -11,33 +11,12 @@ class Pizza implements PizzaInterface
      */
     private $ingredients = [];
 
-    public function addCheese()
+    public function addIngredient($ingredient)
     {
-        $this->ingredients[] = "cheese";
-        return $this;
-    }
-
-    public function addBeacon()
-    {
-        $this->ingredients[] = "beacon";
-        return $this;
-    }
-
-    public function addPineapple()
-    {
-        $this->ingredients[] = "pineapple";
-        return $this;
-    }
-
-    public function addMushroom()
-    {
-        $this->ingredients[] = "mushroom";
-        return $this;
-    }
-
-    public function addSeaFood()
-    {
-        $this->ingredients[] = "sea food";
+        if (!in_array($ingredient, self::SUPPORTED_INGREDIENTS)) {
+            throw new InvalidIngredientException("Invalid ingredient {$ingredient}.");
+        }
+        $this->ingredients[] = $ingredient;
         return $this;
     }
 
