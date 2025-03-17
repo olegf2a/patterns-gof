@@ -7,6 +7,7 @@ use App\Controllers\HomeController;
 use App\Controllers\OwenController;
 use App\Controllers\InternationalCafeController;
 use App\Controllers\PizzaController;
+use App\Controllers\WeatherController;
 
 class Router
 {
@@ -16,6 +17,7 @@ class Router
         'international-cafe' => InternationalCafeController::class,
         'car-dealer' => CarDealerController::class,
         'pizza' => PizzaController::class,
+        'Weather' => WeatherController::class,
     ];
 
     public static function getController(string $url = 'home')
