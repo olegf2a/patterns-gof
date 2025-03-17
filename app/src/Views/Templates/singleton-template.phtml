@@ -1,0 +1,12 @@
+<?php
+/** @var \App\Views\SingletonView $this */
+?>
+
+<div>
+    <?php foreach ($this->getObjects() as $name => $object): ?>
+    <p>Name: <?= $name ?>, object id: <?= spl_object_id($object)  ?></p>
+    <?php endforeach;?>
+</div>
+<div>
+    <p>Limit exception: <?= $this->getError() ?> </p>
+</div>
