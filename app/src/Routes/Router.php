@@ -6,6 +6,7 @@ use App\Controllers\CarDealerController;
 use App\Controllers\HomeController;
 use App\Controllers\OwenController;
 use App\Controllers\InternationalCafeController;
+use App\Controllers\PizzaController;
 use App\Controllers\WeatherController;
 
 class Router
@@ -15,6 +16,7 @@ class Router
         'owen' => OwenController::class,
         'international-cafe' => InternationalCafeController::class,
         'car-dealer' => CarDealerController::class,
+        'pizza' => PizzaController::class,
         'Weather' => WeatherController::class,
     ];
 
