@@ -32,6 +32,12 @@ class SingletonController extends AbstractController
             $instances[] = Singleton::getInstance($id);
         }
 
+        try {
+            clone $instances[1];
+        } catch (\Throwable $exception) {
+            $error .= $exception->getMessage();
+        }
+
         new SingletonView($instances, $error)->render();
 
         parent::footer();

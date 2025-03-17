@@ -16,6 +16,10 @@ class Singleton
     {
     }
 
+    private function __clone()
+    {
+    }
+
     public static function init()
     {
         if (!empty(self::$instances)) {
