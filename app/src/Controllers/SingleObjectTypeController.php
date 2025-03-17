@@ -6,7 +6,7 @@ use App\Patterns\Factories\Singleton\Exceptions\InvalidIdException;
 use App\Patterns\Factories\Singleton\Singleton;
 use App\Views\SingletonView;
 
-class SingletonController extends AbstractController
+class SingleObjectTypeController extends AbstractController
 {
     public static $name = 'Singleton';
 

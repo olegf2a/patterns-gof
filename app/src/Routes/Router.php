@@ -6,7 +6,7 @@ use App\Controllers\CarDealerController;
 use App\Controllers\HomeController;
 use App\Controllers\OwenController;
 use App\Controllers\InternationalCafeController;
-use App\Controllers\SingletonController;
+use App\Controllers\SingleObjectTypeController;
 use App\Controllers\PizzaController;
 use App\Controllers\WeatherController;
 
@@ -19,7 +19,7 @@ class Router
         'car-dealer' => CarDealerController::class,
         'pizza' => PizzaController::class,
         'Weather' => WeatherController::class,
-        'singleton' => SingletonController::class,
+        'singleton' => SingleObjectTypeController::class,
     ];
 
     public static function getController(string $url = 'home')
