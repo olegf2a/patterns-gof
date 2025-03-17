@@ -3,7 +3,7 @@
 namespace App\Patterns\Factories\Singleton;
 
 
-use App\Patterns\Factories\Singleton\Exceptions\LimitException;
+use App\Patterns\Factories\Singleton\Exceptions\InvalidIdException;
 
 class Singleton
 {
@@ -16,19 +16,25 @@ class Singleton
     {
     }
 
-    public static function getInstance(string $name): Singleton
+    public static function init()
     {
-        if (!empty(self::$instances[$name])) {
-             return self::$instances[$name];
+        if (!empty(self::$instances)) {
+            return;
         }
-        if (count(self::$instances) >= 10) {
-            throw new LimitException("Maximum amount of instances are reached");
+        foreach (range(1, 10) as $id) {
+            self::$instances[$id] = new self();
         }
-
-        return self::$instances[$name] = new self();
     }
 
-    public static function getInstancesNames(): array
+    public static function getInstance(int $id): Singleton
+    {
+        if (!isset(self::$instances[$id])) {
+            throw new InvalidIdException();
+        }
+        return self::$instances[$id];
+    }
+
+    public static function getInstancesIds(): array
     {
         return array_keys(self::$instances);
     }

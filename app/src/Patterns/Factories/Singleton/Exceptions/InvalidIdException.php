@@ -2,6 +2,6 @@
 
 namespace App\Patterns\Factories\Singleton\Exceptions;
 
-class LimitException extends \Exception
+class InvalidIdException extends \Exception
 {
 }

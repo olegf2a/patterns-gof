@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Patterns\Factories\Singleton\Exceptions\LimitException;
+use App\Patterns\Factories\Singleton\Exceptions\InvalidIdException;
 use App\Patterns\Factories\Singleton\Singleton;
 use App\Views\SingletonView;
 
@@ -14,23 +14,24 @@ class SingletonController extends AbstractController
     {
         parent::index();
 
+        Singleton::init();
+
         $instances = [];
         $error = '';
+        foreach (Singleton::getInstancesIds() as $id) {
+            $instances[] = Singleton::getInstance($id);
+        }
         try {
-            $i = 1;
-            while ($i < 20) {
-                $name = rand(1111, 9999);
-                $instances[$name] = Singleton::getInstance($name);
-                $i++;
-            }
-        } catch (LimitException $exception) {
+            $instances[] = Singleton::getInstance(42);
+        } catch (InvalidIdException $exception) {
             $error = $exception->getMessage();
         }
 
-        foreach (Singleton::getInstancesNames() as $name) {
-            $instances[] = Singleton::getInstance($name);
+        Singleton::init();
+        foreach (Singleton::getInstancesIds() as $id) {
+            $instances[] = Singleton::getInstance($id);
         }
-        
+
         new SingletonView($instances, $error)->render();
 
         parent::footer();
