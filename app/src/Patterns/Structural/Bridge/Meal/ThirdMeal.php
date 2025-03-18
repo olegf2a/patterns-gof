@@ -4,5 +4,13 @@ namespace App\Patterns\Structural\Bridge\Meal;
 
 class ThirdMeal extends AbstractMeal
 {
-    protected const MEAL_TYPE = "Third meal";
-}
+    public function represent(): string
+    {
+        /**
+         * That method identifies self as super difficult rendering method
+         */
+        return sprintf(
+            "Third meal, that contains ingredients: %s",
+            implode(",", $this->ingredients)
+        );
+    }}
