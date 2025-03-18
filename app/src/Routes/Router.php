@@ -2,6 +2,7 @@
 
 namespace App\Routes;
 
+use App\Controllers\BridgeCafeController;
 use App\Controllers\CarDealerController;
 use App\Controllers\HomeController;
 use App\Controllers\OwenController;
@@ -20,6 +21,7 @@ class Router
         'pizza' => PizzaController::class,
         'Weather' => WeatherController::class,
         'singleton' => SingleObjectTypeController::class,
+        'bridge-cafe' => BridgeCafeController::class,
     ];
 
     public static function getController(string $url = 'home')
