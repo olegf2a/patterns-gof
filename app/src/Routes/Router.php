@@ -9,6 +9,7 @@ use App\Controllers\OwenController;
 use App\Controllers\InternationalCafeController;
 use App\Controllers\SingleObjectTypeController;
 use App\Controllers\PizzaController;
+use App\Controllers\Structural\TreeController;
 use App\Controllers\WeatherController;
 
 class Router
@@ -22,6 +23,7 @@ class Router
         'Weather' => WeatherController::class,
         'singleton' => SingleObjectTypeController::class,
         'bridge-cafe' => BridgeCafeController::class,
+        'tree' => TreeController::class,
     ];
 
     public static function getController(string $url = 'home')
