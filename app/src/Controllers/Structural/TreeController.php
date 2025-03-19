@@ -17,29 +17,34 @@ class TreeController extends AbstractController
 
         $root = new Node(1);
         $firstLeaf = new Leafe(1);
-        $secondNode = new Node(2);
 
-        $thirdNode = new Node(3);
+        $secondNode = new Node(2);
         $secondLeaf = new Leafe(2);
 
+        $thirdNode = new Node(3);
 
-        $thirdLeaf1 = new Leafe(3);
-        $thirdLeaf2 = new Leafe(3);
+        $fourthNode = new Node(4);
+
+        $fourthLeaf1 = new Leafe(4);
+        $fourthLeaf2 = new Leafe(4);
 
 
         $root->addChild($firstLeaf)->addChild($secondNode);
         $secondNode->addChild($secondLeaf)->addChild($thirdNode);
-        $thirdNode->addChild($thirdLeaf1)->addChild($thirdLeaf2);
+        $thirdNode->addChild($fourthNode);
+        $fourthNode->addChild($fourthLeaf1)->addChild($fourthLeaf2);
 
         /**
          * tree
-         *               $root
-         *             |      |
-         *     $secondLeaf   $secondNode
-         *       |              |
-         *  $thirdLeaf        $thirdNode
-         *                  |           |
-         *             $forthLeaf1   $forthLeaf2
+         *                $root
+         *             |        |
+         *     $firstLeaf    $secondNode
+         *                    |      |
+         *            $secondLeaf  $thirdNode
+         *                             |
+         *                        $fourthNode
+         *                          |      |
+         *                 $fourthLeaf1   $fourthLeaf2
          */
 
 
@@ -51,8 +56,8 @@ class TreeController extends AbstractController
         $view->render();
 
 
-        $thirdNode->operation(-2);
-        $view = new TreeView($root, 'since third level decrement 2');
+        $fourthNode->operation(-2);
+        $view = new TreeView($root, 'since fourth level decrement 2');
         $view->render();
 
 
