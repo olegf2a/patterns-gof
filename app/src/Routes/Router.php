@@ -7,6 +7,7 @@ use App\Controllers\CarDealerController;
 use App\Controllers\HomeController;
 use App\Controllers\OwenController;
 use App\Controllers\InternationalCafeController;
+use App\Controllers\Pizza2Controller;
 use App\Controllers\SingleObjectTypeController;
 use App\Controllers\PizzaController;
 use App\Controllers\Structural\TreeController;
@@ -24,6 +25,7 @@ class Router
         'singleton' => SingleObjectTypeController::class,
         'bridge-cafe' => BridgeCafeController::class,
         'tree' => TreeController::class,
+        'pizza2' => Pizza2Controller::class,
     ];
 
     public static function getController(string $url = 'home')

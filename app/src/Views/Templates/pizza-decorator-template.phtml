@@ -1,0 +1,36 @@
+<?php
+/** @var \App\Views\Pizza2View $this */
+?>
+<h2>Pizza Order</h2>
+
+<form method="post" action="/pizza2"
+<div>
+    <p>Base price is $1 + adding prise(s).</p>
+    <table>
+        <tr>
+            <th>Ingredient</th>
+            <th>Amount</th>
+        </tr>
+        <?php foreach ($this->ingredients as $name => $price): ?>
+            <tr>
+                <td><?= $name ?> Price: <?= $price ?></td>
+                <td>
+                    <label for="<?= $name ?>">Quantity:</label>
+                    <input type="number" id="<?= $name ?>" name="ingredients[<?= $name ?>]" min="1" max="5">
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+</div>
+<input type="submit" value="Order Pizza">
+</form>
+
+
+<?php if ($this->pizza): ?>
+    <div>
+        <h3>Ordered pizza:</h3>
+        <?= $this->pizza->represent(); ?>
+        <h3>Price:</h3>
+        <?= $this->pizza->getPrice(); ?>
+    </div>
+<?php endif;?>
