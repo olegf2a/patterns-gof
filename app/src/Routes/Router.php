@@ -2,12 +2,15 @@
 
 namespace App\Routes;
 
+use App\Controllers\BridgeCafeController;
 use App\Controllers\CarDealerController;
 use App\Controllers\HomeController;
 use App\Controllers\OwenController;
 use App\Controllers\InternationalCafeController;
+use App\Controllers\Pizza2Controller;
 use App\Controllers\SingleObjectTypeController;
 use App\Controllers\PizzaController;
+use App\Controllers\Structural\TreeController;
 use App\Controllers\WeatherController;
 
 class Router
@@ -20,6 +23,9 @@ class Router
         'pizza' => PizzaController::class,
         'Weather' => WeatherController::class,
         'singleton' => SingleObjectTypeController::class,
+        'bridge-cafe' => BridgeCafeController::class,
+        'tree' => TreeController::class,
+        'pizza2' => Pizza2Controller::class,
     ];
 
     public static function getController(string $url = 'home')
