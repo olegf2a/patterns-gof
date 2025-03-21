@@ -1,0 +1,3 @@
+App\Models\Calculator\Multiply:
+    xml_root_name: Multiply
+    xml_root_namespace: 'http://tempuri.org/'

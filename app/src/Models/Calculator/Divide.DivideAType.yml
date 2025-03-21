@@ -1,0 +1,22 @@
+App\Models\Calculator\Divide\DivideAType:
+    properties:
+        intA:
+            expose: true
+            access_type: public_method
+            serialized_name: intA
+            xml_element:
+                namespace: 'http://tempuri.org/'
+            accessor:
+                getter: getIntA
+                setter: setIntA
+            type: int
+        intB:
+            expose: true
+            access_type: public_method
+            serialized_name: intB
+            xml_element:
+                namespace: 'http://tempuri.org/'
+            accessor:
+                getter: getIntB
+                setter: setIntB
+            type: int

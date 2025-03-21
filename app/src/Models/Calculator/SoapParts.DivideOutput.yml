@@ -1,0 +1,13 @@
+App\Models\Calculator\SoapParts\DivideOutput:
+    xml_root_namespace: 'http://tempuri.org/'
+    properties:
+        divideResponse:
+            expose: true
+            access_type: public_method
+            xml_element:
+                namespace: 'http://tempuri.org/'
+            accessor:
+                getter: getDivideResponse
+                setter: setDivideResponse
+            serialized_name: DivideResponse
+            type: App\Models\Calculator\DivideResponse

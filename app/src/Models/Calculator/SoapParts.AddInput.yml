@@ -1,0 +1,13 @@
+App\Models\Calculator\SoapParts\AddInput:
+    xml_root_namespace: 'http://tempuri.org/'
+    properties:
+        add:
+            expose: true
+            access_type: public_method
+            xml_element:
+                namespace: 'http://tempuri.org/'
+            accessor:
+                getter: getAdd
+                setter: setAdd
+            serialized_name: Add
+            type: App\Models\Calculator\Add
