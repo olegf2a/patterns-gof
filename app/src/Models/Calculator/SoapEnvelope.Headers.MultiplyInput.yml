@@ -1,0 +1,3 @@
+App\Models\Calculator\SoapEnvelope\Headers\MultiplyInput:
+    xml_namespaces:
+        SOAP: 'http://schemas.xmlsoap.org/soap/envelope/'

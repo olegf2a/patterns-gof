@@ -1,0 +1,3 @@
+App\Models\Calculator\DivideResponse:
+    xml_root_name: DivideResponse
+    xml_root_namespace: 'http://tempuri.org/'

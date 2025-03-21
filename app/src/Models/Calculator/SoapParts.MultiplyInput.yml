@@ -1,0 +1,13 @@
+App\Models\Calculator\SoapParts\MultiplyInput:
+    xml_root_namespace: 'http://tempuri.org/'
+    properties:
+        multiply:
+            expose: true
+            access_type: public_method
+            xml_element:
+                namespace: 'http://tempuri.org/'
+            accessor:
+                getter: getMultiply
+                setter: setMultiply
+            serialized_name: Multiply
+            type: App\Models\Calculator\Multiply

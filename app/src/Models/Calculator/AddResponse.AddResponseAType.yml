@@ -1,0 +1,12 @@
+App\Models\Calculator\AddResponse\AddResponseAType:
+    properties:
+        addResult:
+            expose: true
+            access_type: public_method
+            serialized_name: AddResult
+            xml_element:
+                namespace: 'http://tempuri.org/'
+            accessor:
+                getter: getAddResult
+                setter: setAddResult
+            type: int

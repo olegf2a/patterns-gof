@@ -1,0 +1,12 @@
+App\Models\Calculator\DivideResponse\DivideResponseAType:
+    properties:
+        divideResult:
+            expose: true
+            access_type: public_method
+            serialized_name: DivideResult
+            xml_element:
+                namespace: 'http://tempuri.org/'
+            accessor:
+                getter: getDivideResult
+                setter: setDivideResult
+            type: int
