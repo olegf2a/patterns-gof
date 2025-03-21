@@ -1,0 +1,32 @@
+<?php
+/** @var \App\Views\CalculatorView $this */
+?>
+<h2>Pizza Order</h2>
+
+<form method="post" action="/calculator"
+<div>
+    <h3>Operations:</h3>
+
+        <?php foreach ($this->getOperations() as $operation): ?>
+            <div>
+                <input type="radio" name="operation" value="<?= $operation ?>" /><?= $operation ?>
+            </div>
+        <?php endforeach; ?>
+        <div>
+            <label for="input-a">A:</label>
+            <input type="number" id="input-a" name="input-a">
+        </div>
+        <div>
+            <label for="input-b">B:</label>
+            <input type="number" id="input-b" name="input-b">
+        </div>
+    </table>
+</div>
+<input type="submit" value="calculate">
+</form>
+
+<?php if($this->gerResult()): ?>
+    <div>
+        <p>Result:<?= $this->gerResult() ?></p>
+    </div>
+<?php endif; ?>

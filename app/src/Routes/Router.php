@@ -10,6 +10,7 @@ use App\Controllers\InternationalCafeController;
 use App\Controllers\Pizza2Controller;
 use App\Controllers\SingleObjectTypeController;
 use App\Controllers\PizzaController;
+use App\Controllers\Structural\CalculatorController;
 use App\Controllers\Structural\TreeController;
 use App\Controllers\WeatherController;
 
@@ -26,6 +27,7 @@ class Router
         'bridge-cafe' => BridgeCafeController::class,
         'tree' => TreeController::class,
         'pizza2' => Pizza2Controller::class,
+        'calculator' => CalculatorController::class,
     ];
 
     public static function getController(string $url = 'home')
